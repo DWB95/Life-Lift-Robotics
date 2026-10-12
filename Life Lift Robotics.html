@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life Lift Robotics | A Lift Towards a Better Future</title>
+<link rel="icon" type="image/png" href="Life lift logo.png">
+<style>
+:root {
+    --blue: #215392;
+    --brown: #714e33;
+    --light: #c1e2ff;
+    --white: #ffffff;
+    --dark: #1d2a35;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, sans-serif;
+    color: var(--dark);
+    background: var(--white);
+    line-height: 1.6;
+}
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 7%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+.logo {
+    width: 75px;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+nav a {
+    text-decoration: none;
+    color: var(--blue);
+    font-weight: bold;
+}
+nav a:hover {
+    color: var(--brown);
+}
+.hero {
+    min-height: 100vh;
+    padding: 150px 7% 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #ffffff, var(--light));
+    gap: 50px;
+}
+.hero-text {
+    max-width: 600px;
+}
+.tag {
+    color: var(--brown);
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+h1 {
+    font-size: 60px;
+    line-height: 1.05;
+    color: var(--blue);
+    margin-bottom: 15px;
+}
+h1 span {
+    color: var(--brown);
+}
+.sub-slogan {
+    font-size: 16px;
+    color: var(--brown);
+    font-style: italic;
+    margin-bottom: 25px;
+}
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+.btn {
+    padding: 14px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.btn-primary {
+    background: var(--blue);
+    color: white;
+}
+.btn-secondary {
+    border: 2px solid var(--brown);
+    color: var(--brown);
+}
+.btn:hover {
+    transform: translateY(-3px);
+}
+.hero-visual {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    font-size: 120px;
+}
+section {
+    padding: 90px 7%;
+}
+.section-title {
+    text-align: center;
+    color: var(--blue);
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+.section-subtitle {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+.about {
+    background: white;
+}
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+.about h3 {
+    color: var(--brown);
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+.goal-box {
+    background: var(--light);
+    padding: 35px;
+    border-radius: 15px;
+    border-left: 6px solid var(--blue);
+}
+.technology {
+    background: #f7faff;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+.card {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    transition: 0.3s;
+}
+.card:hover {
+    transform: translateY(-7px);
+}
+.card-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+.card h3 {
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+.how {
+    background: white;
+}
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.step {
+    text-align: center;
+}
+.step-number {
+    width: 55px;
+    height: 55px;
+    background: var(--brown);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+.step h3 {
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+.mission {
+    background: var(--blue);
+    color: white;
+    text-align: center;
+}
+.mission h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+.contact {
+    background: #f7faff;
+}
+.contact-box {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+.contact-box h2 {
+    color: var(--blue);
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+.contact-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+    text-align: left;
+}
+.contact-person {
+    background: var(--light);
+    padding: 22px;
+    border-radius: 12px;
+    border-left: 5px solid var(--blue);
+    transition: 0.3s;
+}
+.contact-person:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.contact-person h3 {
+    color: var(--brown);
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+.contact-person a {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: bold;
+    word-break: break-word;
+}
+.contact-person a:hover {
+    text-decoration: underline;
+}
+footer {
+    background: var(--brown);
+    color: white;
+    text-align: center;
+    padding: 35px 7%;
+}
+footer img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+@media (max-width: 800px) {
+    nav ul {
+        gap: 10px;
+        font-size: 13px;
+    }
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    h1 {
+        font-size: 45px;
+    }
+    .buttons {
+        justify-content: center;
+    }
+    .about-grid,
+    .cards,
+    .steps,
+    .contact-list {
+        grid-template-columns: 1fr;
+    }
+    .hero-visual {
+        width: 280px;
+        height: 280px;
+    }
+}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="#home"><img src="Life lift logo.png" alt="Life Lift Robotics Logo" class="logo"></a>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About Us</a></li>
+<li><a href="#technology">Our Technology</a></li>
+<li><a href="#how">How It Works</a></li>
+<li><a href="#contact">Contact Us</a></li>
+</ul>
+</nav>
+
+<section class="hero" id="home">
+<div class="hero-text">
+<div class="tag">ROBOTICS FOR A BETTER LIFE</div>
+<h1>A Lift Towards<br><span>A Better Future</span></h1>
+<p class="sub-slogan">a product of the NC7 lovers group</p>
+<p>Life Lift Robotics is developing innovative exoskeleton technology designed to help older Australians move with greater confidence, independence and comfort.</p>
+<div class="buttons">
+<a href="#technology" class="btn btn-primary">Explore Our Technology</a>
+<a href="#contact" class="btn btn-secondary">Contact Us</a>
+</div>
+</div>
+<div class="hero-visual">🦿</div>
+</section>
+
+<section class="about" id="about">
+<h2 class="section-title">Redefining Mobility</h2>
+<p class="section-subtitle">Technology with a purpose — helping people stay active, independent and confident for longer.</p>
+<div class="about-grid">
+<div>
+<h3>Technology with a purpose</h3>
+<p>Our robotic exoskeletons are designed to support everyday movement without taking away a person's independence. By combining smart sensors, lightweight materials and responsive assistance, Life Lift Robotics aims to make movement easier and safer.</p>
+</div>
+<div class="goal-box">
+<h3>Our Goal</h3>
+<p>To create accessible technology that gives older people the confidence to keep doing the things they love.</p>
+</div>
+</div>
+</section>
+
+<section class="technology" id="technology">
+<h2 class="section-title">Our Technology</h2>
+<p class="section-subtitle">Built around the needs of the people who use it.</p>
+<div class="cards">
+<div class="card">
+<div class="card-icon">⚙️</div>
+<h3>Smart Assistance</h3>
+<p>Sensors detect movement and provide assistance when it is needed most.</p>
+</div>
+<div class="card">
+<div class="card-icon">🪶</div>
+<h3>Lightweight Design</h3>
+<p>A comfortable design allows users to move naturally without unnecessary weight.</p>
+</div>
+<div class="card">
+<div class="card-icon">🛡️</div>
+<h3>Built for Confidence</h3>
+<p>Designed to support everyday movement and help users feel more secure on their feet.</p>
+</div>
+</div>
+</section>
+
+<section class="how" id="how">
+<h2 class="section-title">How It Works</h2>
+<p class="section-subtitle">Simple technology designed to fit naturally into everyday life.</p>
+<div class="steps">
+<div class="step">
+<div class="step-number">1</div>
+<h3>Put It On</h3>
+<p>The exoskeleton is securely fitted to the user and adjusted for comfort.</p>
+</div>
+<div class="step">
+<div class="step-number">2</div>
+<h3>Move Naturally</h3>
+<p>Smart sensors detect the user's movement and respond in real time.</p>
+</div>
+<div class="step">
+<div class="step-number">3</div>
+<h3>Get Support</h3>
+<p>The system provides assistance to make everyday movement easier.</p>
+</div>
+</div>
+</section>
+
+<section class="mission">
+<h2>A lift towards a better future.</h2>
+<p>Because getting older shouldn't mean giving up the freedom to move.</p>
+</section>
+
+<section class="contact" id="contact">
+<div class="contact-box">
+<h2>Contact Us</h2>
+<p>Have a question or want to learn more about Life Lift Robotics? Get in touch with our team.</p>
+<div class="contact-list">
+<div class="contact-person"><h3>Declan Butters</h3><a href="mailto:DeclanB@lifeliftrobotics.com">DeclanB@lifeliftrobotics.com</a></div>
+<div class="contact-person"><h3>Charlie Dunstan</h3><a href="mailto:CharlieD@lifeliftrobotics.com">CharlieD@lifeliftrobotics.com</a></div>
+<div class="contact-person"><h3>Will James</h3><a href="mailto:WillJ@lifeliftrobotics.com">WillJ@lifeliftrobotics.com</a></div>
+<div class="contact-person"><h3>Lincoln Riley</h3><a href="mailto:LincolnR@lifeliftrobotics.com">LincolnR@lifeliftrobotics.com</a></div>
+<div class="contact-person"><h3>Tanner Audsley</h3><a href="mailto:TannerA@lifeliftrobotics.com">TannerA@lifeliftrobotics.com</a></div>
+<div class="contact-person"><h3>Toby Greenhalgh</h3><a href="mailto:TobyG@lifeliftrobotics.com">TobyG@lifeliftrobotics.com</a></div>
+</div>
+</div>
+</section>
+
+<footer>
+<img src="Life lift logo.png" alt="Life Lift Robotics Logo">
+<p>A lift towards a better future.</p>
+</footer>
+
+</body>
+</html>
